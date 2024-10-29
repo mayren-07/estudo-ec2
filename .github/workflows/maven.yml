@@ -39,8 +39,8 @@ jobs:
     - name: EC2 Deploy Action
       run: |
            echo "${{secrets.KEY_EC2}}" > private_key && chmod 400 private_key
-           ssh -o StrictHostKeyChecking=no -i "private_key" ubuntu@ec2-52-207-221-11.compute-1.amazonaws.com "
-             cd /home/ubuntu/produtoExemplo &&
+           ssh -o StrictHostKeyChecking=no -i "private_key" ubuntu@ec2-44-199-0-95.compute-1.amazonaws.com "
+             cd /home/ubuntu/POC &&
              git pull &&
              mvn clean package -DskipTests &&
-             ./executar.sh "
+             ./execute.sh "
